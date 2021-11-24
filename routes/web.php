@@ -54,7 +54,9 @@ Route::group(['namespace' => 'frontend'], function(){
     //Ajax preview product
     Route::group(['namespace' => 'Ajax','prefix'=>'ajax'], function (){
         Route::get('view-product/{id}','AjaxViewProductController@getPreviewProduct')->name('get_ajax.product_preview');
+        //Ajax cart
         Route::get('add/cart/{id}','AjaxShoppingCartController@add')->name('get_ajax.shopping.add');
+        Route::get('delete/cart/{id}','AjaxShoppingCartController@delete')->name('get_ajax.shopping.delete');
 
     });
 

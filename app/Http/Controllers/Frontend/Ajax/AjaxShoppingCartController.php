@@ -8,12 +8,13 @@ use Illuminate\Http\Request;
 
 class AjaxShoppingCartController extends Controller
 {
-    //
+    //Them Gio Hang
     public function add(Request $request, $productID)
     {
         if ($request->ajax())
         {
             //1. Kiem tra sp
+            $qty    = $request->qty;
             $product    = Product::find($productID);
             if (!$product){
                 return response()->json([
@@ -33,7 +34,7 @@ class AjaxShoppingCartController extends Controller
             });
             if ($idCartProduct){
                 $productByCart = \Cart::get($idCartProduct);
-                if ($product->pro_number < ($productByCart->qty + 1)){
+                if ($product->pro_number < ($productByCart->qty + $qty)){
                     return response()->json([
                         'status' => 200,
                         'message' => 'Số lượng sản phẩm không đủ'
@@ -44,7 +45,7 @@ class AjaxShoppingCartController extends Controller
             \Cart::add([
                 'id' => $product->id,
                 'name' => $product->pro_name,
-                'qty' => 1,
+                'qty' => $qty,
                 'price' => $product->pro_price,
                 'weight' => 1,
                 'options' => [
@@ -57,6 +58,18 @@ class AjaxShoppingCartController extends Controller
             return response()->json([
                'status' => 200,
                 'message' => 'Thêm sản phẩm thành công',
+            ]);
+        }
+    }
+
+    //Xoa Gio Hang
+    public function delete(Request $request, $id)
+    {
+        if ($request->ajax())
+        {
+            \Cart::remove($id);
+            return response()->json([
+               'status' => 200,
             ]);
         }
     }

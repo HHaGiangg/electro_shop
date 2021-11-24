@@ -36,7 +36,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($products as $product)
+                            @foreach($products as $row => $product)
                             <tr>
                                 <td class="product__cart__item">
                                     <div class="product__cart__item__pic">
@@ -55,7 +55,7 @@
                                     </div>
                                 </td>
                                 <td class="cart__price">{{ number_format($product->price * $product->qty) }} VNĐ</td>
-                                <td class="cart__close"><i class="fa fa-close"></i></td>
+                                <td class="cart__close"><a class=" js-delete-cart" href="{{ route('get_ajax.shopping.delete', $row) }}"><i class="fa fa-close"></i></a></td>
                             </tr>
                             @endforeach
                             </tbody>

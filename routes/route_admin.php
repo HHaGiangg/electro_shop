@@ -118,6 +118,21 @@ Route::group(['namespace' => 'backend','prefix'=>'admin'], function(){
 
     });
 
+    //Đơn Hàng
+    Route::prefix('transaction')->group(function(){
+        Route::get('','BackendTransactionController@index')->name('get_backend.transaction.index');
+        Route::get('view/{id}','BackendTransactionController@view')->name('get_backend.transaction.view');
+        Route::get('success/{id}','BackendTransactionController@success')->name('get_backend.transaction.success');
+        Route::get('cancel/{id}','BackendTransactionController@cancel')->name('get_backend.transaction.cancel');
+        Route::get('delete/{id}','BackendTransactionController@delete')->name('get_backend.transaction.delete');
+
+    });
+    // Giao dịch
+    Route::prefix('order')->group(function(){
+        Route::get('delete/{id}','BackendOrderController@delete')->name('get_backend.order.delete');
+
+    });
+
     Route::get('setting','BackendSettingController@index')->name('get_backend.setting');
     Route::post('setting','BackendSettingController@createOrUpdate')->name('get_backend.setting.store');
 

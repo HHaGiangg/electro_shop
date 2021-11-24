@@ -124,13 +124,13 @@
 {{--                                    </label>--}}
 {{--                                </div>--}}
 {{--                            </div>--}}
-                            <div class="product__details__cart__option">
+                            <div class="product__details__cart__option  box-qty">
                                 <div class="quantity">
-                                    <div class="pro-qty">
-                                        <input type="text" value="1">
+                                    <div class="pro-qty ">
+                                        <input type="text" class="val-qty" value="1">
                                     </div>
                                 </div>
-                                <a href="#" class="primary-btn">add to cart</a>
+                                <a href="{{ route('get_ajax.shopping.add', $product->id) }}" class="primary-btn js-add-cart">Thêm vào giỏ hàng</a>
                             </div>
                             <div class="product__details__btns__option">
                                 <a href="#"><i class="fa fa-heart"></i> add to wishlist</a>

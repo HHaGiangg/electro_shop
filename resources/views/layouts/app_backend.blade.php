@@ -662,21 +662,30 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-main-heading">Thành Viên</li>
+                    <li class="nav-main-heading">Khách hàng/Thành viên</li>
                     <li class="nav-main-item">
                         <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-                            <i class="nav-main-link-icon si si-layers"></i>
-                            <span class="nav-main-link-name">Danh sách thành viên</span>
+                            <i class="nav-main-link-icon si si-user"></i>
+                            <span class="nav-main-link-name">Thành viên</span>
                         </a>
                         <ul class="nav-main-submenu">
                             <li class="nav-main-item">
                                 <a class="nav-main-link" href="{{ route('get_backend.user.index') }}">
-                                    <span class="nav-main-link-name">Thành viên</span>
+                                    <span class="nav-main-link-name">Danh sách thành viên</span>
                                 </a>
                             </li>
+                        </ul>
+                    </li>
+                    <li class="nav-main-heading">Đơn hàng</li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                            <i class="nav-main-link-icon fa fa-shopping-cart"></i>
+                            <span class="nav-main-link-name">Đơn hàng</span>
+                        </a>
+                        <ul class="nav-main-submenu">
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="/">
-                                    <span class="nav-main-link-name">Ảnh chi tiết sản phẩm</span>
+                                <a class="nav-main-link" href="{{ route('get_backend.transaction.index') }}">
+                                    <span class="nav-main-link-name">Danh sách đơn hàng</span>
                                 </a>
                             </li>
                         </ul>

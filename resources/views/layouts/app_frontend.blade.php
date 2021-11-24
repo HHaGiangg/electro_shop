@@ -131,7 +131,7 @@
                 <div class="header__nav__option">
                     <a href="#" class="search-switch"><img src="{{ asset('frontend/img/icon/search.png')}}" alt=""></a>
                     <a href="#"><img src="{{ asset('frontend/img/icon/heart.png')}}" alt=""></a>
-                    <a href="{{ route('get.shopping') }}"><img src="{{ asset('frontend/img/icon/cart.png')}}" alt="" title="Giỏ Hàng"> <span>{{ \Cart::count() }}</span></a>
+                    <a href="{{ route('get.shopping') }}"><img src="{{ asset('frontend/img/icon/cart.png')}}" alt="" title="Giỏ Hàng" style="width: 22px; height: 24px"> <span>{{ \Cart::count() }}</span></a>
                     <div class="price">$0.00</div>
                 </div>
             </div>
@@ -251,8 +251,29 @@
         //             console.log(results)
         //         });
         // });
-
+        // $("body").on('click','js-add-cart',function (event) {
         $(".js-add-cart").click( function (event) {
+            event.preventDefault()
+            let $this   = $(this)
+            let URL     = $this.attr('href')
+            let qty     = 1
+            let $elementQty = $this.parents('.box-qty').find(".val-qty")
+            if($elementQty.length)
+            {
+                qty = $elementQty.val()
+            }
+            $.ajax({
+                url: URL,
+                data : {
+                    qty : qty
+                }
+            }).done(function( results ) {
+                console.log(results)
+            });
+        })
+
+         //$("body").on('click','js-delete-cart',function (event) {
+        $(".js-delete-cart").click( function (event) {
             event.preventDefault()
             let $this   = $(this)
             let URL     = $this.attr('href')
@@ -261,6 +282,10 @@
                 url: URL,
             }).done(function( results ) {
                 console.log(results)
+                if(results.status === 200)
+                {
+                    $this.parents('tr').remove()
+                }
             });
         })
 
