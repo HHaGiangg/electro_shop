@@ -507,7 +507,7 @@
         <!-- Side Header -->
         <div class="content-header bg-white-5">
             <!-- Logo -->
-            <a class="font-w600 text-dual" href="index.html">
+            <a class="font-w600 text-dual" href="{{ route('get.home') }}">
                     <span class="smini-visible">
                     <i class="fa fa-circle-notch text-primary"></i>
                     </span>

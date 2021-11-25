@@ -44,13 +44,7 @@
                                 {{ $article->a_description }}
                             </p>
                         </div>
-{{--                        <div class="blog__details__quote">--}}
-{{--                            <i class="fa fa-quote-left"></i>--}}
-{{--                            <p>“When designing an advertisement for a particular product many things should be--}}
-{{--                                researched like where it should be displayed.”--}}
-{{--                            </p>--}}
-{{--                            <h6>_ John Smith _</h6>--}}
-{{--                        </div>--}}
+
                         <div class="blog__details__text">
                             <p>
                                 {!! $article->a_content !!}
@@ -79,22 +73,33 @@
                         </div>
                         <div class="blog__details__btns">
                             <div class="row">
+                                @if($articlePrevious)
                                 <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <a href="" class="blog__details__btns__item">
-                                        <p><span class="arrow_left"></span> Previous Pod</p>
-                                        <h5>It S Classified How To Utilize Free Classified Ad Sites</h5>
+                                    <a href="{{ route('get.article_detail', ['slug'=> $articlePrevious->a_slug]) }}" class="blog__details__btns__item">
+                                        <p><span class="arrow_left"></span> Bài viết trước</p>
+                                        <h5>{{ $articlePrevious->a_name }}</h5>
                                     </a>
                                 </div>
+                                @endif
+                                @if($articleNext)
                                 <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <a href="" class="blog__details__btns__item blog__details__btns__item--next">
-                                        <p>Next Pod <span class="arrow_right"></span></p>
-                                        <h5>Tips For Choosing The Perfect Gloss For Your Lips</h5>
+                                    <a href="{{ route('get.article_detail', ['slug'=> $articleNext->a_slug]) }}" class="blog__details__btns__item blog__details__btns__item--next">
+                                        <p>Bài viết tiếp theo <span class="arrow_right"></span></p>
+                                        <h5>{{ $articleNext->a_name }}</h5>
                                     </a>
                                 </div>
+                                @endif
                             </div>
                         </div>
+                        <div class="blog__details__quote">
+                            <i class="fa fa-quote-left"></i>
+                            <p>“When designing an advertisement for a particular product many things should be
+                                researched like where it should be displayed.”
+                            </p>
+                            <h6>_ John Smith _</h6>
+                        </div>
                         <div class="blog__details__comment">
-                            <h4>Leave A Comment</h4>
+                            <h4>Để lại bình luận của bạn</h4>
                             <form action="#">
                                 <div class="row">
                                     <div class="col-lg-4 col-md-4">

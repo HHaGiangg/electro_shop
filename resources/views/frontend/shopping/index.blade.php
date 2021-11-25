@@ -47,14 +47,15 @@
                                         <h5>{{ number_format($product->price) }} VNĐ</h5>
                                     </div>
                                 </td>
-                                <td class="quantity__item">
-                                    <div class="quantity">
-                                        <div class="pro-qty-2">
-                                            <input type="text" value="{{ $product->qty }}">
+                                <td class="quantity__item ">
+                                    <div class="quantity ">
+                                        <div class="pro-qty-2 ">
+                                            <input type="text" class="value-qty" value="{{ $product->qty }}">
                                         </div>
                                     </div>
                                 </td>
                                 <td class="cart__price">{{ number_format($product->price * $product->qty) }} VNĐ</td>
+                                <td class="cart__close"><a class=" js-update-cart" href="{{ route('get_ajax.shopping.update', $row) }}"><i class="fa fa-pencil"></i></a></td>
                                 <td class="cart__close"><a class=" js-delete-cart" href="{{ route('get_ajax.shopping.delete', $row) }}"><i class="fa fa-close"></i></a></td>
                             </tr>
                             @endforeach

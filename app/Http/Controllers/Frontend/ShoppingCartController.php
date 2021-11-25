@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\Transaction;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -24,9 +25,11 @@ class ShoppingCartController extends Controller
     public function checkout()
     {
         $products   = \Cart::content();
+        $user   = User::find(get_data_user('web'));
 
         $viewData   = [
             'products'    => $products,
+            'user'        => $user,
         ];
         return view('frontend.shopping.checkout', $viewData);
     }
@@ -35,6 +38,7 @@ class ShoppingCartController extends Controller
     {
         $dataTransaction    = $request->except('_token');
         $dataTransaction['created_at']  = Carbon::now();
+        $dataTransaction['t_user_id']   = get_data_user('web') ?? 0;
         $dataTransaction['t_total_money'] = (int)str_replace(',','', \Cart::subtotal(0));
         $transaction   = Transaction::create($dataTransaction);
         //kiểm tra đơn hàng có tồn tại hay không?

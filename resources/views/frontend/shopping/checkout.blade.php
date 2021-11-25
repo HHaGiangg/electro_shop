@@ -34,7 +34,7 @@
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Họ Tên<span>*</span></p>
-                                        <input type="text" name="t_name" required>
+                                        <input type="text" name="t_name" value="{{ $user->name ?? '' }}" required>
                                     </div>
                                 </div>
                             </div>
@@ -42,9 +42,23 @@
 {{--                                <p>Quốc gia<span>*</span></p>--}}
 {{--                                <input type="text">--}}
 {{--                            </div>--}}
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        <p>Số điện thoại<span>*</span></p>
+                                        <input type="text" name="t_phone" value="{{ $user->phone ?? '' }}" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        <p>Email<span>*</span></p>
+                                        <input type="text"  name="t_email" value="{{ $user->email ?? '' }}"required>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="checkout__input">
                                 <p>Địa chỉ<span>*</span></p>
-                                <input name="t_address" required type="text" placeholder="Số nhà, ngõ, tên đường, xóm, xã/phường, quận/huyện..." class="checkout__input__add">
+                                <input name="t_address" required type="text" value="{{ $user->address ?? '' }}" placeholder="Số nhà, ngõ, tên đường, xóm, xã/phường, quận/huyện..." class="checkout__input__add">
 {{--                                <input type="text" placeholder="Số nhà, ngõ,...">--}}
                             </div>
 {{--                            <div class="checkout__input">--}}
@@ -59,20 +73,7 @@
 {{--                                <p>Postcode / ZIP<span>*</span></p>--}}
 {{--                                <input type="text">--}}
 {{--                            </div>--}}
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="checkout__input">
-                                        <p>Số điện thoại<span>*</span></p>
-                                        <input type="text" name="t_phone" required>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="checkout__input">
-                                        <p>Email<span>*</span></p>
-                                        <input type="text"  name="t_email" required>
-                                    </div>
-                                </div>
-                            </div>
+
 {{--                            <div class="checkout__input__checkbox">--}}
 {{--                                <label for="acc">--}}
 {{--                                    Create an account?--}}

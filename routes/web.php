@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 include "route_admin.php";
-
+include "router_user.php";
 //FRONTEND
 Route::group(['namespace' => 'frontend'], function(){
     //Login & Register
@@ -44,6 +44,9 @@ Route::group(['namespace' => 'frontend'], function(){
     //Shopping Cart
     Route::get('don-hang', 'ShoppingCartController@index')->name('get.shopping');
 
+
+
+
     //Pay Cart
     Route::get('thanh-toan', 'ShoppingCartController@checkout')->name('get.shopping.checkout');
     Route::post('thanh-toan', 'ShoppingCartController@pay');
@@ -57,6 +60,8 @@ Route::group(['namespace' => 'frontend'], function(){
         //Ajax cart
         Route::get('add/cart/{id}','AjaxShoppingCartController@add')->name('get_ajax.shopping.add');
         Route::get('delete/cart/{id}','AjaxShoppingCartController@delete')->name('get_ajax.shopping.delete');
+        Route::get('update/cart/{id}','AjaxShoppingCartController@update')->name('get_ajax.shopping.update');
+
 
     });
 

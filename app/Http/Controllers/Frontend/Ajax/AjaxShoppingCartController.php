@@ -73,4 +73,16 @@ class AjaxShoppingCartController extends Controller
             ]);
         }
     }
+
+    //Cập nhật Gio Hang
+    public function update(Request $request, $id)
+    {
+        if ($request->ajax())
+        {
+            \Cart::update($id, $request->qty);
+            return response()->json([
+                'status' => 200,
+            ]);
+        }
+    }
 }
