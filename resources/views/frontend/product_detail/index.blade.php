@@ -78,14 +78,14 @@
                     <div class="col-lg-8">
                         <div class="product__details__text">
                             <h4>{{ $product->pro_name }}</h4>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o"></i>
-                                <span> - 5 Reviews</span>
-                            </div>
+{{--                            <div class="rating">--}}
+{{--                                <i class="fa fa-star"></i>--}}
+{{--                                <i class="fa fa-star"></i>--}}
+{{--                                <i class="fa fa-star"></i>--}}
+{{--                                <i class="fa fa-star"></i>--}}
+{{--                                <i class="fa fa-star-o"></i>--}}
+{{--                                <span> - 5 Reviews</span>--}}
+{{--                            </div>--}}
                             <h3>{{ number_format($product->pro_price,0,',','.') }} VNĐ</h3>
 {{--                            <h3>$270.00 <span>70.00</span></h3>--}}
                             <p> {{ $product->pro_description }}</p>

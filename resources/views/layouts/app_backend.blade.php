@@ -666,12 +666,12 @@
                     <li class="nav-main-item">
                         <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
                             <i class="nav-main-link-icon si si-user"></i>
-                            <span class="nav-main-link-name">Thành viên</span>
+                            <span class="nav-main-link-name">Khách hàng</span>
                         </a>
                         <ul class="nav-main-submenu">
                             <li class="nav-main-item">
                                 <a class="nav-main-link" href="{{ route('get_backend.user.index') }}">
-                                    <span class="nav-main-link-name">Danh sách thành viên</span>
+                                    <span class="nav-main-link-name">Danh sách khách hàng</span>
                                 </a>
                             </li>
                         </ul>

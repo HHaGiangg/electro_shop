@@ -137,7 +137,7 @@ Route::group(['namespace' => 'backend','prefix'=>'admin'], function(){
     Route::post('setting','BackendSettingController@createOrUpdate')->name('get_backend.setting.store');
 
     Route::get('profile','BackendProfileController@index')->name('get_backend.profile');
-    Route::post('profile','BackendProfileController@createOrUpdate')->name('get_backend.profile.store');
+    Route::post('profile','BackendProfileController@CreateOrUpdate')->name('get_backend.profile.store');
 
 
 

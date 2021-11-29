@@ -28,10 +28,19 @@ class HomeController extends Controller
         $categoriesHot = Category::where('c_hot', Category::HOT)
         ->orderByDesc('id')->limit(3)
         ->get();
+
+        //Blg mới nhất
+//        $latestArticle   = Article::with('menu:id,mn_name,mn_slug')->orderByDesc('id')->paginate(3);
+        $latestArticle = Article::orderByDesc('id')
+            ->limit(3)
+            ->select('id','a_name','a_avatar','a_slug','created_at')
+            ->get();
+
         $viewData = [
             'productsHot' => $productsHot,
             'slide'       => $slide,
             'categoriesHot' => $categoriesHot,
+            'latestArticle' => $latestArticle,
         ];
         return view('frontend.home.index', $viewData);
     }
