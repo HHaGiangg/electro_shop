@@ -77,17 +77,17 @@
 {{--                            <a href="#">FAQs</a>--}}
 {{--                        </div>--}}
                         <div class="header__top__hover">
-                            <li>
+
                                 @if(get_data_user('web'))
                                    <span><a href="#" ><i class="fa fa-user"></i>{{ get_data_user('web','name') }}</a></span>
                                     <ul>
                                         <li><a href="{{ route('get.logout') }}">Đăng Xuất</a></li>
-                                        <li><a href="#">Đơn Hàng</a></li>
+                                        <li><a href="{{ route('get.shopping') }}">Đơn Hàng</a></li>
                                     </ul>
                                 @else
-                                    <a href="{{ route('get.login') }}" class="login-panel"><i class="fa fa-user"></i>Đăng nhập</a>
+                                    <a href="{{ route('get.login') }}" class="login-panel"><i class="fa fa-user"></i> Đăng nhập</a>
                                 @endif
-                            </li>
+
                         </div>
                     </div>
                 </div>
@@ -104,26 +104,11 @@
             <div class="col-lg-6 col-md-6">
                 <nav class="header__menu mobile-menu">
                     <ul>
-                        <li class="active"><a href="{{ route('get.home') }}">Home</a></li>
-{{--                        <li><a href="./shop.html">Shop</a></li>--}}
-                        <li><a href="">Danh Mục</a>
-                            <ul class="dropdown">
-                                @foreach($categoriesGlobal as $item)
-                                <li><a title="{{ $item->c_name }}" href="{{ route('get.category', $item->c_slug) }}">{{ $item->c_name }}</a></li>
-                                @endforeach
-                            </ul>
-                        </li>
-{{--                        <li><a href="#">Pages</a>--}}
-{{--                            <ul class="dropdown">--}}
-{{--                                <li><a href="./about.html">About Us</a></li>--}}
-{{--                                <li><a href="./shop-details.html">Shop Details</a></li>--}}
-{{--                                <li><a href="./shopping-cart.html">Shopping Cart</a></li>--}}
-{{--                                <li><a href="./checkout.html">Check Out</a></li>--}}
-{{--                                <li><a href="./blog-details.html">Blog Details</a></li>--}}
-{{--                            </ul>--}}
-{{--                        </li>--}}
-                        <li><a href="{{ route('get.blog') }}" title="Bài viết">Bài Viết</a></li>
-                        <li><a href="./contact.html">Liên Hệ</a></li>
+                        <li class="active"><a href="{{ route('get.home') }}"><i class="fa fa-home"></i> Home</a></li>
+                        @foreach($categoriesGlobal as $item)
+                            <li><a class="nav-link " title="{{ $item->c_name }}" href="{{ route('get.category', $item->c_slug) }}">{{ $item->c_name }}</a></li>
+                        @endforeach
+                        <li><a class="nav-link " href="{{ route('get.blog') }}" title="Bài viết">Bài Viết</a></li>
                     </ul>
                 </nav>
             </div>

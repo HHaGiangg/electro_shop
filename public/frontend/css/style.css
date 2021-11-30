@@ -414,7 +414,9 @@ ol {
 }
 
 .header__menu {
-	text-align: center;
+	/*text-align: center;*/
+    width: 700px;
+    text-align: left;
 	padding: 26px 0 25px;
 }
 

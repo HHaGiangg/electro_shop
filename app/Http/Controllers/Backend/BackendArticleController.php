@@ -17,7 +17,7 @@ class BackendArticleController extends Controller
     protected $folder = 'backend.article.';
     public function index()
     {
-        $articles    = Article::with('menu:id,mn_name')->orderByDesc('id')->paginate(20);
+        $articles    = Article::with('menu:id,mn_name')->orderByDesc('id')->paginate(5);
 
         $viewData  = [
             'articles' =>  $articles,
