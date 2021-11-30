@@ -57,6 +57,7 @@ class AjaxShoppingCartController extends Controller
 
             return response()->json([
                'status' => 200,
+                'totalCart' => \Cart::count(),
                 'message' => 'Thêm sản phẩm thành công',
             ]);
         }
@@ -70,6 +71,8 @@ class AjaxShoppingCartController extends Controller
             \Cart::remove($id);
             return response()->json([
                'status' => 200,
+                'totalCart' => \Cart::count(),
+                'message' => 'Xóa sản phẩm thành công',
             ]);
         }
     }
@@ -82,6 +85,8 @@ class AjaxShoppingCartController extends Controller
             \Cart::update($id, $request->qty);
             return response()->json([
                 'status' => 200,
+                'totalCart' => \Cart::count(),
+                'message' => 'Cập nhật giỏ hàng thành công',
             ]);
         }
     }

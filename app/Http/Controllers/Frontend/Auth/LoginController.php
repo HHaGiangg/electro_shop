@@ -16,7 +16,7 @@ class LoginController extends Controller
     //Đăng nhập
     public function postLogin(Request $request)
     {
-        $credentials = $request->only('email', 'password','name');
+        $credentials = $request->only('email', 'password');
 
         if (\Auth::attempt($credentials)) {
             // Authentication passed...

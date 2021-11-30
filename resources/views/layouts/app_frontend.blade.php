@@ -116,8 +116,8 @@
                 <div class="header__nav__option">
                     <a href="#" class="search-switch"><img src="{{ asset('frontend/img/icon/search.png')}}" alt=""></a>
                     <a href="#"><img src="{{ asset('frontend/img/icon/heart.png')}}" alt=""></a>
-                    <a href="{{ route('get.shopping') }}"><img src="{{ asset('frontend/img/icon/cart.png')}}" alt="" title="Giỏ Hàng" style="width: 22px; height: 24px"> <span>{{ \Cart::count() }}</span></a>
-                    <div class="price">$0.00</div>
+                    <a href="{{ route('get.shopping') }}"><img src="{{ asset('frontend/img/icon/cart.png')}}" alt="" title="Giỏ Hàng" style="width: 22px; height: 24px"> <span  id="totalCart">{{ \Cart::count() }}</span></a>
+{{--                    <div class="price">$0.00</div>--}}
                 </div>
             </div>
         </div>
@@ -191,6 +191,9 @@
                     qty : qty
                 }
             }).done(function( results ) {
+                alert(results.message)
+                if (typeof results.totalCart !== "undefined")
+                    $("#totalCart").text(results.totalCart)
                 console.log(results)
             });
         })
@@ -204,10 +207,14 @@
             $.ajax({
                 url: URL,
             }).done(function( results ) {
+                alert(results.message)
                 console.log(results)
                 if(results.status === 200)
                 {
                     $this.parents('tr').remove()
+
+                    if (typeof results.totalCart !== "undefined")
+                        $("#totalCart").text(results.totalCart)
                 }
             });
         })
@@ -231,6 +238,9 @@
                 }
             }).done(function( results ) {
                 // console.log(results)
+                alert(results.message)
+                if (typeof results.totalCart !== "undefined")
+                    $("#totalCart").text(results.totalCart)
                 location.reload();
             });
         })

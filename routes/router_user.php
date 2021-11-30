@@ -1,5 +1,5 @@
 <?php
-//BACKEND
+
 Route::group(['namespace' => 'user','prefix'=>'user','middleware'=>'checkLoginUser'], function(){
     //Trangchu
     Route::get('/','UserController@index')->name('get_user.home');

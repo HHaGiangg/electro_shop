@@ -12,7 +12,7 @@ class BackendUserController extends Controller
     public function index()
     {
         $users  = User::orderByDesc('id')
-            ->paginate(20);
+            ->paginate(10);
 
         $viewData = [
             'users' => $users,
@@ -39,6 +39,7 @@ class BackendUserController extends Controller
     }
     public function delete($id)
     {
-
+        User::find($id)->delete();
+        return redirect()->back();
     }
 }

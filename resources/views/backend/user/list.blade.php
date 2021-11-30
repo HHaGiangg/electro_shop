@@ -28,3 +28,6 @@
         </tbody>
     </table>
 </div>
+<div class="float-right">
+    {!! $users->appends($query ?? [])->links('vendor.pagination.bootstrap-4') !!}
+</div>

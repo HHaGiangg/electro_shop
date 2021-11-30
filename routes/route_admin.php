@@ -1,6 +1,14 @@
 <?php
+Route::group(['namespace' => 'backend', 'prefix' => 'admin'], function(){
+    Route::group(['namespace' => 'auth'], function() {
+        Route::get('login','BackendLoginController@getLogin')->name('get_admin.login');
+        Route::post('login','BackendLoginController@postLogin');
+        Route::get('logout','BackendLoginController@getLogout')->name('get_admin.logout');
+    });
+});
+
 //BACKEND
-Route::group(['namespace' => 'backend','prefix'=>'admin'], function(){
+Route::group(['namespace' => 'backend','prefix'=>'admin','middleware'=>'checkLoginAdmin'], function(){
     //Trangchu
     Route::get('/','BackendHomeController@index')->name('get_backend.home');
 
