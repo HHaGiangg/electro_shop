@@ -112,4 +112,5 @@ class BackendProductController extends Controller
         \DB::table('products')->where('id',$id)->delete();
         return redirect()->back();
     }
+
 }

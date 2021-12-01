@@ -12,7 +12,7 @@ class Product extends Model
     protected $table    = 'products';
 
     const HOT =1;
-
+    const ACTIVE =1;
     public function category()
     {
         return $this->belongsTo(Category::class,'pro_category_id');

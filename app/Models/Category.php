@@ -12,4 +12,9 @@ class Category extends Model
     protected $table    = 'categories';
 
     const HOT   = 1;
+
+    public function keywords()
+    {
+        return $this->belongsToMany(Keyword::class, 'products_keywords','pk_product_id','pk_keyword_id');
+    }
 }

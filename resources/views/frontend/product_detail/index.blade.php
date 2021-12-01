@@ -89,41 +89,6 @@
                             <h3>{{ number_format($product->pro_price,0,',','.') }} VNĐ</h3>
 {{--                            <h3>$270.00 <span>70.00</span></h3>--}}
                             <p> {{ $product->pro_description }}</p>
-{{--                            <div class="product__details__option">--}}
-{{--                                <div class="product__details__option__size">--}}
-{{--                                    <span>Size:</span>--}}
-{{--                                    <label for="xxl">xxl--}}
-{{--                                        <input type="radio" id="xxl">--}}
-{{--                                    </label>--}}
-{{--                                    <label class="active" for="xl">xl--}}
-{{--                                        <input type="radio" id="xl">--}}
-{{--                                    </label>--}}
-{{--                                    <label for="l">l--}}
-{{--                                        <input type="radio" id="l">--}}
-{{--                                    </label>--}}
-{{--                                    <label for="sm">s--}}
-{{--                                        <input type="radio" id="sm">--}}
-{{--                                    </label>--}}
-{{--                                </div>--}}
-{{--                                <div class="product__details__option__color">--}}
-{{--                                    <span>Color:</span>--}}
-{{--                                    <label class="c-1" for="sp-1">--}}
-{{--                                        <input type="radio" id="sp-1">--}}
-{{--                                    </label>--}}
-{{--                                    <label class="c-2" for="sp-2">--}}
-{{--                                        <input type="radio" id="sp-2">--}}
-{{--                                    </label>--}}
-{{--                                    <label class="c-3" for="sp-3">--}}
-{{--                                        <input type="radio" id="sp-3">--}}
-{{--                                    </label>--}}
-{{--                                    <label class="c-4" for="sp-4">--}}
-{{--                                        <input type="radio" id="sp-4">--}}
-{{--                                    </label>--}}
-{{--                                    <label class="c-9" for="sp-9">--}}
-{{--                                        <input type="radio" id="sp-9">--}}
-{{--                                    </label>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
                             <div class="product__details__cart__option  box-qty">
                                 <div class="quantity">
                                     <div class="pro-qty ">
@@ -163,8 +128,11 @@
                                     <a class="nav-link active" data-toggle="tab" href="#tabs-5"
                                        role="tab">Mô Tả Sản Phẩm</a>
                                 </li>
+{{--                                <li class="nav-item">--}}
+{{--                                    <a class="nav-link" data-toggle="tab" href="#tabs-7" role="tab">Chính sách bán hàng</a>--}}
+{{--                                </li>--}}
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#tabs-7" role="tab">Thông Số Kỹ Thuật</a>
+                                    <a class="nav-link" data-toggle="tab" href="#tabs-7" role="tab">Bình luận</a>
                                 </li>
                             </ul>
                             <div class="tab-content">
@@ -187,67 +155,89 @@
 {{--                                        </div>--}}
                                     </div>
                                 </div>
+{{--                                <div class="tab-pane" id="tabs-7" role="tabpanel">--}}
+{{--                                    <div class="product__details__tab__content">--}}
+{{--                                        <div class="col-xl-12">--}}
+{{--                                            <!-- Striped Table -->--}}
+{{--                                            <div class="block block-rounded">--}}
+{{--                                                <div class="block-header">--}}
+{{--                                                    <h4 class="block-title">Chính sách bán hàng</h4>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="block-content">--}}
+{{--                                                    <div class="block block-rounded d-none d-lg-block">--}}
+{{--                                                        <div class="block-content">--}}
+{{--                                                            <p class="text-center py-12">--}}
+{{--                                                                <i class="fa fa-car"><b> Miễn phí giao hàng cho đơn hàng từ 800K</b></i>--}}
+{{--                                                            </p>--}}
+{{--                                                            <p class="text-center py-12">--}}
+{{--                                                                <i class="fa fa-shield"><b> Cam kết hàng chính hãng 100 %</b></i>--}}
+{{--                                                            </p>--}}
+{{--                                                            <p class="text-center py-12">--}}
+{{--                                                                <i class="fa fa-share-alt"><b> Đổi trả trong vòng 10 ngày</b></i>--}}
+{{--                                                            </p>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="block block-rounded">--}}
+{{--                                                <div class="block-header">--}}
+{{--                                                    <h4 class="block-title">Dịch vụ khác</h4>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="block-content">--}}
+{{--                                                    <div class="block block-rounded d-none d-lg-block">--}}
+{{--                                                        <div class="block-content">--}}
+{{--                                                            <p class="text-center py-12">--}}
+{{--                                                                <i class="fa fa-cog"><b> Sửa chữa đồng giá 150.000 đ</b></i>--}}
+{{--                                                            </p>--}}
+{{--                                                            <p class="text-center py-12">--}}
+{{--                                                                <i class="fa fa-laptop"><b> Vệ sinh laptop, bàn phím, tai nghe</b></i>--}}
+{{--                                                            </p>--}}
+{{--                                                            <p class="text-center py-12">--}}
+{{--                                                                <i class="fa fa-share-alt"><b> Bảo hành tại nhà</b></i>--}}
+{{--                                                            </p>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                            <!-- END Striped Table -->--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
                                 <div class="tab-pane" id="tabs-7" role="tabpanel">
                                     <div class="product__details__tab__content">
                                         <div class="col-xl-12">
                                             <!-- Striped Table -->
                                             <div class="block block-rounded">
-                                                <div class="block-header">
-                                                    <h3 class="block-title">Thông số kỹ thuật</h3>
+                                                <div class="blog__details__quote">
+                                                    @foreach($comments as $comment)
+                                                                <i class="fa fa-quote-left"></i>
+                                                                <p>“{{ $comment->cm_content }}.”
+                                                                </p>
+                                                                <h6>_ {{ $comment->cm_name }} _</h6> <span style="font-size: 10px"> {{ $comment->created_at }}</span>
+                                                    @endforeach
                                                 </div>
-                                                <div class="block-content">
-                                                    <table class="table table-striped table-vcenter">
-                                                        <tbody>
-                                                        <tr>
-                                                            <td class="font-w600 font-size-sm">
-                                                                <a href="be_pages_generic_profile.html">Justin Hunt</a>
-                                                            </td>
-                                                            <td class="d-none d-sm-table-cell">
-                                                                <span class="badge badge-primary">Personal</span>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="font-w600 font-size-sm">
-                                                                <a href="be_pages_generic_profile.html">Brian Cruz</a>
-                                                            </td>
-                                                            <td class="d-none d-sm-table-cell">
-                                                                <span class="badge badge-success">VIP</span>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="font-w600 font-size-sm">
-                                                                <a href="be_pages_generic_profile.html">Danielle Jones</a>
-                                                            </td>
-                                                            <td class="d-none d-sm-table-cell">
-                                                                <span class="badge badge-info">Business</span>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="font-w600 font-size-sm">
-                                                                <a href="be_pages_generic_profile.html">Carol Ray</a>
-                                                            </td>
-                                                            <td class="d-none d-sm-table-cell">
-                                                                <span class="badge badge-info">Business</span>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="font-w600 font-size-sm">
-                                                                <a href="be_pages_generic_profile.html">Melissa Rice</a>
-                                                            </td>
-                                                            <td class="d-none d-sm-table-cell">
-                                                                <span class="badge badge-primary">Personal</span>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="font-w600 font-size-sm">
-                                                                <a href="be_pages_generic_profile.html">Melissa Rice</a>
-                                                            </td>
-                                                            <td class="d-none d-sm-table-cell">
-                                                                <span class="badge badge-danger">Disabled</span>
-                                                            </td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
+                                                <div class="blog__details__comment">
+                                                    @if(get_data_user('web'))
+                                                                <h4>Để lại bình luận của bạn</h4>
+                                                                <form action="{{ route('get.product_detail.comment',['slug' => $product->pro_slug]) }}" method="POST">
+                                                                    @csrf
+                                                                    <div class="row">
+                                                                        <div class="col-lg-4 col-md-4">
+                                                                            <input type="text" style="color: #0a0a0a" placeholder="" name="name" value="{{ get_data_user('web','name') }}">
+                                                                        </div>
+                                                                        <div class="col-lg-4 col-md-4">
+                                                                            <input type="text" style="color: #0a0a0a" placeholder="" disabled value="{{ get_data_user('web','address') }}">
+                                                                        </div>
+                                                                        <div class="col-lg-12 text-center">
+                                                                            <textarea style="color: #0a0a0a" required placeholder="Comment" name="comment"></textarea>
+                                                                            <button type="submit" class="site-btn">Đăng bình luận</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                    @else
+                                                        <p style="color: red"> Đăng nhập để thực hiện bình luận</p>
+                                                    @endif
+                                                </div>
                                                 </div>
                                             </div>
                                             <!-- END Striped Table -->

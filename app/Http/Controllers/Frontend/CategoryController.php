@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Comment;
+use App\Models\Keyword;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -13,6 +15,7 @@ class CategoryController extends ProductBaseController
     {
         $categories = Category::all();
         $category   = Category::where('c_slug', $slug)->first();
+
         if (!$category) return abort(404);
 
 //        $categories      = $this->getCategory();
@@ -24,10 +27,11 @@ class CategoryController extends ProductBaseController
         }
 
         $products    = $products->select('id','pro_name','pro_slug','pro_price','pro_avatar')
-          ->paginate(12);
+          ->paginate(9);
 
         $viewData = [
             'categories' => $categories,
+            'keywords'  => $this->getKeyWords(),
             'title' => $category->c_name,
             'category' => $category,
             'products'   => $products,

@@ -11,6 +11,7 @@
                 <th class="text-center">Tên</th>
                 <th class="text-center">Danh Mục</th>
                 <th>Trạng Thái</th>
+                <th>Sản phẩm mới</th>
                 <th>Giá</th>
                 <th>Số lượng</th>
                 <th class="text-center" style="width: 100px;">Actions</th>
@@ -31,6 +32,12 @@
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" disabled id="inlineRadio2" value="1" {{ $product->pro_hot == 1  ? "checked" : "" }}>
                             <label class="form-check-label" for="inlineRadio2">Nổi bật</label>
+                        </div>
+                    </td>
+                    <td class="font-w600 font-size-sm">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" disabled id="inlineRadio2" value="1" {{ $product->pro_active == 1  ? "checked" : "" }}>
+                            <label class="form-check-label" for="inlineRadio2">Hiển thị</label>
                         </div>
                     </td>
                     <td class="text-danger"><span>{{ number_format($product->pro_price,0,',','.') }} đ</span></td>

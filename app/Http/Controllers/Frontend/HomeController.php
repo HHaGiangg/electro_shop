@@ -19,6 +19,13 @@ class HomeController extends Controller
         ->select('id','pro_name','pro_slug','pro_price','pro_avatar')
         ->get();
 
+        //Sản phẩm mới
+        $productsNew   = Product::where('pro_active',Product::ACTIVE)
+        ->limit(9)
+        ->select('id','pro_name','pro_slug','pro_price','pro_avatar')
+            ->orderByDesc('id')
+        ->get();
+
         //Slide
         $slide  = Slide::where('s_active', 1)
             ->orderByDesc('id')
@@ -38,6 +45,7 @@ class HomeController extends Controller
 
         $viewData = [
             'productsHot' => $productsHot,
+            'productsNew'    => $productsNew,
             'slide'       => $slide,
             'categoriesHot' => $categoriesHot,
             'latestArticle' => $latestArticle,

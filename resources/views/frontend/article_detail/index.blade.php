@@ -11,7 +11,7 @@
                         <ul>
                             <li>By Deercreative</li>
                             <li>{{ $article->created_at }}</li>
-                            <li>8 Comments</li>
+{{--                            <li>8 Comments</li>--}}
                         </ul>
                     </div>
                 </div>
@@ -91,33 +91,33 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="blog__details__quote">
-                            <i class="fa fa-quote-left"></i>
-                            <p>“When designing an advertisement for a particular product many things should be
-                                researched like where it should be displayed.”
-                            </p>
-                            <h6>_ John Smith _</h6>
-                        </div>
-                        <div class="blog__details__comment">
-                            <h4>Để lại bình luận của bạn</h4>
-                            <form action="#">
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-4">
-                                        <input type="text" placeholder="Name">
-                                    </div>
-                                    <div class="col-lg-4 col-md-4">
-                                        <input type="text" placeholder="Email">
-                                    </div>
-                                    <div class="col-lg-4 col-md-4">
-                                        <input type="text" placeholder="Phone">
-                                    </div>
-                                    <div class="col-lg-12 text-center">
-                                        <textarea placeholder="Comment"></textarea>
-                                        <button type="submit" class="site-btn">Post Comment</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+{{--                        <div class="blog__details__quote">--}}
+{{--                            <i class="fa fa-quote-left"></i>--}}
+{{--                            <p>“When designing an advertisement for a particular product many things should be--}}
+{{--                                researched like where it should be displayed.”--}}
+{{--                            </p>--}}
+{{--                            <h6>_ John Smith _</h6>--}}
+{{--                        </div>--}}
+{{--                        <div class="blog__details__comment">--}}
+{{--                            <h4>Để lại bình luận của bạn</h4>--}}
+{{--                            <form action="#">--}}
+{{--                                <div class="row">--}}
+{{--                                    <div class="col-lg-4 col-md-4">--}}
+{{--                                        <input type="text" placeholder="Name">--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-lg-4 col-md-4">--}}
+{{--                                        <input type="text" placeholder="Email">--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-lg-4 col-md-4">--}}
+{{--                                        <input type="text" placeholder="Phone">--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-lg-12 text-center">--}}
+{{--                                        <textarea placeholder="Comment"></textarea>--}}
+{{--                                        <button type="submit" class="site-btn">Post Comment</button>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </form>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>

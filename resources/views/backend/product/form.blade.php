@@ -78,7 +78,7 @@
                         @endif
                     </div>
                     <div class="form-group">
-{{--                        <label for="block-form1-username">Sản phẩm nổi bật</label>--}}
+                        <label for="block-form1-username">Sản phẩm nổi bật</label>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="pro_hot" id="inlineRadio1" value="0" {{ ($product->pro_hot ?? 0) == 0 ? "checked":"" }}>
                             <label class="form-check-label" for="inlineRadio1">Mặc định</label>
@@ -86,6 +86,17 @@
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="pro_hot" id="inlineRadio2" value="1" {{ ($product->pro_hot ?? 0) == 1 ? "checked":"" }}>
                             <label class="form-check-label" for="inlineRadio2">Nổi bật</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="block-form1-username">Sản phẩm mới</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="pro_active" id="inlineRadio1" value="0" {{ ($product->pro_active ?? 0) == 0 ? "checked":"" }}>
+                            <label class="form-check-label" for="inlineRadio1">Tắt</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="pro_active" id="inlineRadio2" value="1" {{ ($product->pro_active ?? 0) == 1 ? "checked":"" }}>
+                            <label class="form-check-label" for="inlineRadio2">Hiển thị</label>
                         </div>
                     </div>
                     <div class="form-group">

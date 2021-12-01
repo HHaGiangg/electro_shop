@@ -27,20 +27,31 @@ Route::group(['namespace' => 'frontend'], function(){
     });
     //Trangchu
     Route::get('/','HomeController@index')->name('get.home');
+
     //Danh muc sp
     Route::get('danh-muc/{slug}','CategoryController@index')->name('get.category');
+
     //Chi tiet sp
     Route::get('san-pham/{slug}','ProductDetailController@index')->name('get.product_detail');
+
+    //Binh luan chi tiet sp
+    Route::post('san-pham/comment/{slug}','ProductDetailController@comment')->name('get.product_detail.comment');
+
     //Menu bai viet
     Route::get('menu/{slug}','MenuController@index')->name('get.menu');
+
     //Tag bai viet
     Route::get('tag/{slug}','TagController@index')->name('get.tag');
+
     //Blog
     Route::get('bai-viet', 'ArticleController@index')->name('get.blog');
+
     //Chi tiet bai viet
     Route::get('bai-viet/{slug}','ArticleDetailController@index')->name('get.article_detail');
+
     //Keyword
     Route::get('keyword/{slug}','KeywordController@index')->name('get.keyword');
+
     //Shopping Cart
     Route::get('don-hang', 'ShoppingCartController@index')->name('get.shopping');
 

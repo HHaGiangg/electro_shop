@@ -57,13 +57,20 @@
                 <div class="col-lg-12">
                     <ul class="filter__controls">
                         <li class="active" data-filter="*">Sản Phẩm Nổi Bật</li>
-{{--                        <li data-filter=".new-arrivals">New Arrivals</li>--}}
 {{--                        <li data-filter=".hot-sales">Hot Sales</li>--}}
                     </ul>
                 </div>
             </div>
-
             @include('frontend.home.include._inc_product_hot',['productHot'=>$productsHot])
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="filter__controls">
+                        <li data-filter=".new-arrivals">Sản Phẩm Mới</li>
+                        {{--                        <li data-filter=".hot-sales">Hot Sales</li>--}}
+                    </ul>
+                </div>
+            </div>
+            @include('frontend.home.include._inc_product_new',['productNew'=>$productsNew])
         </div>
     </section>
     <!-- Product Section End -->
