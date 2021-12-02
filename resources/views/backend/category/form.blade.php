@@ -27,14 +27,20 @@
                 <div class="form-group">
                     <label>Chọn ảnh danh mục sản phẩm</label>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input js-custom-file-input-enabled" data-toggle="custom-file-input" id="" name="c_avatar" multiple="" accept="image/*">
+                        <input type="file" class="custom-file-input js-custom-file-input-enabled"  onchange="preview()" data-toggle="custom-file-input" id="" name="c_avatar" multiple="" accept="image/*">
+                        <img id="frame" src="" alt="" style="width:100px; height:100px; margin-top: 10px" >
                         <label class="custom-file-label" for="example-file-input-multiple-custom">Chọn ảnh</label>
+                        <script>
+                            function preview() {
+                                frame.src=URL.createObjectURL(event.target.files[0]);
+                            }
+                        </script>
                     </div>
                     @if(isset($category) && $category->c_avatar)
-                        <img src="{{ pare_url_file($category->c_avatar) }}" alt="" class="img-thumbnail" style="width: 100%; height: auto; max-width: 100%; margin-top: 15px">
+                        <img src="{{ pare_url_file($category->c_avatar) }}" id="frame" alt="" class="img-thumbnail" style="width: 100%; height: auto; max-width: 100%; margin-top: 15px">
                     @endif
                 </div>
-                <div class="form-group">
+                <div class="form-group mt-7">
                     <div class="block-options">
                         <button type="submit" class="btn btn-sm btn-primary">
                             Xử lý thông tin

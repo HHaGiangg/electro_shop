@@ -29,6 +29,7 @@ Route::group(['namespace' => 'frontend'], function(){
     Route::get('/','HomeController@index')->name('get.home');
 
     //Danh muc sp
+    Route::get('danh-muc','CategoryController@index')->name('get.categories');
     Route::get('danh-muc/{slug}','CategoryController@index')->name('get.category');
 
     //Chi tiet sp

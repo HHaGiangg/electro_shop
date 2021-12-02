@@ -55,6 +55,7 @@ class AjaxShoppingCartController extends Controller
                 ]]);
 
 
+
             return response()->json([
                'status' => 200,
                 'totalCart' => \Cart::count(),

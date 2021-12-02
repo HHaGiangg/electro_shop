@@ -3,7 +3,7 @@
 @section('content')
     <h1>Danh sách bài viết <a href="{{ route('get_backend.article.create') }}" class="btn btn-xs btn-success">Thêm mới</a></h1>
     <div class="block-content">
-        <table class="table table-vcenter">
+        <table class="table table-vcenter" id="jsDatatable">
             <thead class="thead-light">
             <tr>
                 <th class="text-center" style="width: 50px;">ID</th>
@@ -39,8 +39,6 @@
             </tbody>
         </table>
     </div>
-    <div class="float-right">
-        {!! $articles->appends($query ?? [])->links('vendor.pagination.bootstrap-4') !!}
-    </div>
+
 
 @endsection

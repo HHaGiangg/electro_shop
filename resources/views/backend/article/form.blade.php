@@ -66,11 +66,17 @@
                     <div class="form-group">
                         <label>Chọn ảnh sản phẩm</label>
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input js-custom-file-input-enabled" data-toggle="custom-file-input" id="" name="a_avatar" multiple="" accept="image/*">
+                            <input type="file" class="custom-file-input js-custom-file-input-enabled" data-toggle="custom-file-input" onchange="preview()"  id="" name="a_avatar" multiple="" accept="image/*">
                             <label class="custom-file-label" for="example-file-input-multiple-custom">Chọn ảnh</label>
+                            <img id="frame" src="" alt=""  style="width: 100%; height: auto; max-width: 100%; margin-top: 15px" class="img-thumbnail">
+                            <script>
+                                function preview() {
+                                    frame.src=URL.createObjectURL(event.target.files[0]);
+                                }
+                            </script>
                         </div>
                         @if(isset($article) && $article->a_avatar)
-                            <img src="{{ pare_url_file($article->a_avatar) }}" alt="" class="img-thumbnail" style="width: 100%; height: auto; max-width: 100%; margin-top: 15px">
+                            <img src="{{ pare_url_file($article->a_avatar) }}" id="frame" alt="" class="img-thumbnail" style="width: 100%; height: auto; max-width: 100%; margin-top: 15px">
                         @endif
                     </div>
                 </div>

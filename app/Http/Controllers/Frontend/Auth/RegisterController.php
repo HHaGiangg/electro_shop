@@ -23,6 +23,10 @@ class RegisterController extends Controller
         $data['password'] = bcrypt($request->password);
         $data['created_at'] = Carbon::now();
         $user = User::create($data);
+        \Session::flash('toastr',[
+            'type' => 'success',
+            'message' => 'Đăng ký thành công'
+        ]);
         if (\Auth::loginUsingId($user->id)){
             return redirect()->route('get.home');
         }

@@ -12,7 +12,7 @@ class BackendUserController extends Controller
     public function index()
     {
         $users  = User::orderByDesc('id')
-            ->paginate(10);
+            ->get();
 
         $viewData = [
             'users' => $users,

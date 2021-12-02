@@ -27,6 +27,9 @@
     <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
     <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/amethyst.min.css"> -->
     <!-- END Stylesheets -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
 </head>
 <body>
 <!-- Page Container -->
@@ -1041,7 +1044,9 @@
     -->
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 <script src="{{ asset('backend/assets/js/oneui.app.min.js')}}"></script>
 <!-- Page JS Plugins -->
 <script src="{{ asset('backend/assets/js/plugins/jquery-sparkline/jquery.sparkline.min.js')}}"></script>
@@ -1054,6 +1059,31 @@
     $(function() {
         $(document).ready(function() {
             $('.js-tags').select2();
+            $('#jsDatatable').DataTable();
+
+            $(".fa-times").click(function (event) {
+                event.preventDefault();
+                let URL = $(this).attr('href');
+                $.confirm({
+                    title: 'Bạn muốn xóa dữ liệu?',
+                    content: 'Dữ liệu xóa đi không thể khôi phục',
+                    type: 'red',
+                    buttons: {
+                        ok: {
+                            text: "ok!",
+                            btnClass: 'btn-primary',
+                            keys: ['enter'],
+                            action: function(){
+                                window.location.href = URL;
+                            }
+                        },
+                        cancel: function(){
+
+                        }
+                    }
+                });
+            })
+
         });
     })
 </script>

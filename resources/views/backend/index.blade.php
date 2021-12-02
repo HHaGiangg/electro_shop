@@ -7,16 +7,16 @@
             <div class="block block-rounded d-flex flex-column">
                 <div class="block-content block-content-full flex-grow-1 d-flex justify-content-between align-items-center">
                     <dl class="mb-0">
-                        <dt class="font-size-h2 font-w700">32</dt>
-                        <dd class="text-muted mb-0">Pending Orders</dd>
+                        <dt class="font-size-h2 font-w700">{{ $countProduct }}</dt>
+                        <dd class="text-muted mb-0">Sản phẩm</dd>
                     </dl>
                     <div class="item item-rounded bg-body">
-                        <i class="fa fa-shopping-cart font-size-h3 text-primary"></i>
+                        <i class="fa fa-database font-size-h3 text-primary"></i>
                     </div>
                 </div>
                 <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
-                    <a class="font-w500 d-flex align-items-center" href="javascript:void(0)">
-                        View all orders
+                    <a class="font-w500 d-flex align-items-center" href="{{ route('get_backend.product.index') }}">
+                        Xem tất cả sản phẩm
                         <i class="fa fa-arrow-alt-circle-right ml-1 opacity-25 font-size-base"></i>
                     </a>
                 </div>
@@ -28,16 +28,16 @@
             <div class="block block-rounded d-flex flex-column">
                 <div class="block-content block-content-full flex-grow-1 d-flex justify-content-between align-items-center">
                     <dl class="mb-0">
-                        <dt class="font-size-h2 font-w700">124</dt>
-                        <dd class="text-muted mb-0">New Customers</dd>
+                        <dt class="font-size-h2 font-w700">{{ $countUser }}</dt>
+                        <dd class="text-muted mb-0">Thành viên</dd>
                     </dl>
                     <div class="item item-rounded bg-body">
                         <i class="fa fa-users font-size-h3 text-primary"></i>
                     </div>
                 </div>
                 <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
-                    <a class="font-w500 d-flex align-items-center" href="javascript:void(0)">
-                        View all customers
+                    <a class="font-w500 d-flex align-items-center" href="{{ route('get_backend.user.index') }}">
+                        Xem tất cả thành viên
                         <i class="fa fa-arrow-alt-circle-right ml-1 opacity-25 font-size-base"></i>
                     </a>
                 </div>
@@ -49,16 +49,16 @@
             <div class="block block-rounded d-flex flex-column">
                 <div class="block-content block-content-full flex-grow-1 d-flex justify-content-between align-items-center">
                     <dl class="mb-0">
-                        <dt class="font-size-h2 font-w700">45</dt>
-                        <dd class="text-muted mb-0">Messages</dd>
+                        <dt class="font-size-h2 font-w700">{{ $countTransaction }}</dt>
+                        <dd class="text-muted mb-0">Đơn hàng</dd>
                     </dl>
                     <div class="item item-rounded bg-body">
-                        <i class="fa fa-inbox font-size-h3 text-primary"></i>
+                        <i class="fa fa-shopping-cart font-size-h3 text-primary"></i>
                     </div>
                 </div>
                 <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
-                    <a class="font-w500 d-flex align-items-center" href="javascript:void(0)">
-                        View all messages
+                    <a class="font-w500 d-flex align-items-center" href="{{ route('get_backend.transaction.index') }}">
+                        Xem tất cả đơn hàng
                         <i class="fa fa-arrow-alt-circle-right ml-1 opacity-25 font-size-base"></i>
                     </a>
                 </div>
@@ -70,16 +70,16 @@
             <div class="block block-rounded d-flex flex-column">
                 <div class="block-content block-content-full flex-grow-1 d-flex justify-content-between align-items-center">
                     <dl class="mb-0">
-                        <dt class="font-size-h2 font-w700">4.5%</dt>
-                        <dd class="text-muted mb-0">Conversion Rate</dd>
+                        <dt class="font-size-h2 font-w700">{{ $countArticle }}</dt>
+                        <dd class="text-muted mb-0">Blog</dd>
                     </dl>
                     <div class="item item-rounded bg-body">
-                        <i class="fa fa-chart-line font-size-h3 text-primary"></i>
+                        <i class="fa fa-blog font-size-h3 text-primary"></i>
                     </div>
                 </div>
                 <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
-                    <a class="font-w500 d-flex align-items-center" href="javascript:void(0)">
-                        View statistics
+                    <a class="font-w500 d-flex align-items-center" href="{{ route('get_backend.article.index') }}">
+                        Xem tất cả bài viết
                         <i class="fa fa-arrow-alt-circle-right ml-1 opacity-25 font-size-base"></i>
                     </a>
                 </div>
@@ -88,4 +88,82 @@
         </div>
     </div>
     <!-- END Overview -->
+    <!-- Đơn hàng mới -->
+    <div class="row">
+        <div class="col-xl-12 d-flex flex-column">
+            <!-- Earnings Summary -->
+            <div class="block block-rounded flex-grow-1 d-flex flex-column">
+                <div class="block-header block-header-default">
+                    <h3 class="block-title">Đơn hàng mới</h3>
+                </div>
+                <div class="block-content block-content-full flex-grow-1 d-flex align-items-center">
+                    <div class="block-content">
+                        <table class="table table-vcenter">
+                            <thead class="thead-light">
+                            <tr>
+                                <th class="text-center" style="width: 50px;">ID</th>
+                                <th class="text-center">Tên</th>
+                                <th class="text-center">Số điện thoại</th>
+                                <th class="text-center">Số tiền</th>
+                                <th class="text-center">Ghi Chú</th>
+                                <th class="text-center">Thời gian</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($transactions as $transaction)
+                                <tr>
+                                    <th class="text-center" scope="row">{{ $transaction->id }}</th>
+                                    <th class="text-center" scope="row">{{ $transaction->t_name }}</th>
+                                    <td class="text-center">{{ $transaction->t_phone }}</td>
+                                    <td class="text-center"><span>{{ number_format($transaction->t_total_money,0,',','.') }} đ</span></td>
+                                    <td class="text-center">{{ $transaction->t_note }}</td>
+                                    <td class="text-center">{{ $transaction->created_at}}</td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            <!-- END Earnings Summary -->
+        </div>
+        <!-- Thành viên mới -->
+        <div class="col-xl-12 d-flex flex-column">
+            <!-- Earnings Summary -->
+            <div class="block block-rounded flex-grow-1 d-flex flex-column">
+                <div class="block-header block-header-default">
+                    <h3 class="block-title">Thành viên mới</h3>
+                </div>
+                <div class="block-content block-content-full flex-grow-1 d-flex align-items-center">
+                    <div class="block-content">
+                        <table class="table table-vcenter">
+                            <thead class="thead-light">
+                            <tr>
+                                <th class="text-center" style="width: 50px;">ID</th>
+                                <th class="text-center">Tên</th>
+                                <th class="text-center">Email</th>
+                                <th class="text-center">Điện thoại</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($users as $user)
+                                <tr>
+                                    <th class="text-center" scope="row">{{ $user->id }}</th>
+                                    <td class="text-center">{{ $user->name }}</td>
+                                    <th class="text-center" >{{ $user->email }}</th>
+                                    <th class="text-center" >{{ $user->phone }}</th>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- END Earnings Summary -->
+        </div>
+        <!-- End -->
+    </div>
+    <!-- End -->
+
 @endsection

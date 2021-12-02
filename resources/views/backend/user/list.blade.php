@@ -1,5 +1,5 @@
 <div class="block-content">
-    <table class="table table-vcenter">
+    <table class="table table-vcenter" id="jsDatatable">
         <thead class="thead-light">
         <tr>
             <th class="text-center" style="width: 50px;">ID</th>
@@ -28,6 +28,4 @@
         </tbody>
     </table>
 </div>
-<div class="float-right">
-    {!! $users->appends($query ?? [])->links('vendor.pagination.bootstrap-4') !!}
-</div>
+

@@ -56,6 +56,10 @@ class ShoppingCartController extends Controller
                 ]);
             }
         }
+        \Session::flash('toastr',[
+            'type' => 'success',
+            'message' => 'Đơn hàng của bạn đã được lưu'
+        ]);
         \Cart::destroy();
 
         return redirect()->route('get.home');

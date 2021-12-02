@@ -18,6 +18,10 @@ class LoginController extends Controller
     {
         $credentials = $request->only('email', 'password');
 
+        \Session::flash('toastr',[
+            'type' => 'success',
+            'message' => 'Đăng nhập thành công'
+        ]);
         if (\Auth::attempt($credentials)) {
             // Authentication passed...
             return redirect()->route('get.home');

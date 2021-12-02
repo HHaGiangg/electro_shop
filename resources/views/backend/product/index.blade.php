@@ -3,7 +3,7 @@
 @section('content')
     <h1>Danh sách sản phẩm <a href="{{ route('get_backend.product.create') }}" class="btn btn-xs btn-success">Thêm mới</a></h1>
     <div class="block-content">
-        <table class="table table-vcenter">
+        <table class="table table-vcenter" id="jsDatatable">
             <thead class="thead-light">
             <tr>
                 <th class="text-center" style="width: 50px;">ID</th>
@@ -26,7 +26,7 @@
                             <img src="{{pare_url_file($product->pro_avatar )}}" class="img-thumbnail" style="width: 60px; height: 60px" alt="">
                         </a>
                     </th>
-                    <td class="font-w600 font-size-sm">{{ $product->pro_name }}</td>
+                    <td class="font-w600 font-size-sm" style="width: 300px">{{ $product->pro_name }}</td>
                     <td class="font-w600 font-size-sm">{{ $product->category->c_name ?? "[N/A]" }}</td>
                     <td class="font-w600 font-size-sm">
                         <div class="form-check form-check-inline">
@@ -57,9 +57,7 @@
             </tbody>
         </table>
     </div>
-    <div class="float-right">
-        {!! $products->appends($query ?? [])->links('vendor.pagination.bootstrap-4') !!}
-    </div>
+
 
 
 @endsection
