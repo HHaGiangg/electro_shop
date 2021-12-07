@@ -23,25 +23,25 @@
                                     </div>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="{{ asset('frontend/img/shop-details/thumb-2.png')}}">
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="{{ asset('frontend/img/shop-details/thumb-3.png')}}">
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="{{ asset('frontend/img/shop-details/thumb-4.png')}}">
-                                        <i class="fa fa-play"></i>
-                                    </div>
-                                </a>
-                            </li>
+{{--                            <li class="nav-item">--}}
+{{--                                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">--}}
+{{--                                    <div class="product__thumb__pic set-bg" data-setbg="{{ asset('frontend/img/shop-details/thumb-2.png')}}">--}}
+{{--                                    </div>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
+{{--                            <li class="nav-item">--}}
+{{--                                <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">--}}
+{{--                                    <div class="product__thumb__pic set-bg" data-setbg="{{ asset('frontend/img/shop-details/thumb-3.png')}}">--}}
+{{--                                    </div>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
+{{--                            <li class="nav-item">--}}
+{{--                                <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">--}}
+{{--                                    <div class="product__thumb__pic set-bg" data-setbg="{{ asset('frontend/img/shop-details/thumb-4.png')}}">--}}
+{{--                                        <i class="fa fa-play"></i>--}}
+{{--                                    </div>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
                         </ul>
                     </div>
                     <div class="col-lg-6 col-md-9">
@@ -223,10 +223,10 @@
                                                                     @csrf
                                                                     <div class="row">
                                                                         <div class="col-lg-4 col-md-4">
-                                                                            <input type="text" style="color: #0a0a0a" placeholder="" name="name" value="{{ get_data_user('web','name') }}">
+                                                                            <input type="text"  placeholder="" name="name" value="{{ get_data_user('web','name') }}">
                                                                         </div>
                                                                         <div class="col-lg-4 col-md-4">
-                                                                            <input type="text" style="color: #0a0a0a" placeholder="" disabled value="{{ get_data_user('web','address') }}">
+                                                                            <input type="text" style="color: black" placeholder="" disabled value="{{ get_data_user('web','address') }}">
                                                                         </div>
                                                                         <div class="col-lg-12 text-center">
                                                                             <textarea style="color: #0a0a0a" required placeholder="Comment" name="comment"></textarea>

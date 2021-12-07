@@ -33,7 +33,7 @@
     {{-- Chat bot   --}}
     <style>
         html, body {
-            background: #efefef;
+            /*background: #efefef;*/
             height:100%;
         }
         #center-text {
@@ -305,10 +305,10 @@
                         <div class="header__top__hover">
 
                                 @if(get_data_user('web'))
-                                   <span><a href="#" ><i class="fa fa-user"></i>{{ get_data_user('web','name') }}</a></span>
+                                   <span><a href="{{ route('get_user.home') }}" ><i class="fa fa-user"></i>{{ get_data_user('web','name') }}</a></span>
                                     <ul>
                                         <li><a href="{{ route('get.logout') }}">Đăng Xuất</a></li>
-                                        <li><a href="{{ route('get.shopping') }}">Đơn Hàng</a></li>
+                                        <li><a href="{{ route('get_user.home') }}">Profile</a></li>
                                     </ul>
                                 @else
                                     <a href="{{ route('get.login') }}" class="login-panel"><i class="fa fa-user"></i> Đăng nhập</a>

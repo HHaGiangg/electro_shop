@@ -24,6 +24,11 @@ Route::group(['namespace' => 'frontend'], function(){
         Route::get('register','RegisterController@getRegister')->name('get.register');
         Route::post('register','RegisterController@postRegister');
         Route::get('logout','LoginController@getLogout')->name('get.logout');
+        Route::get('reset-password','ResetPasswordController@getEmailReset')->name('get.email_reset_password');
+        Route::post('reset-password','ResetPasswordController@checkEmailReset');
+
+        Route::get('new-password','ResetPasswordController@newPassword')->name('get.new_password');
+        Route::post('new-password','ResetPasswordController@savePassword');
     });
     //Trangchu
     Route::get('/','HomeController@index')->name('get.home');
