@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\BotManController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 include "route_admin.php";
 include "router_user.php";
+//Chatbot
+Route::match(['get', 'post'], 'botman', 'BotManController@handle');
+
 //FRONTEND
 Route::group(['namespace' => 'frontend'], function(){
     //Login & Register
@@ -81,5 +84,7 @@ Route::group(['namespace' => 'frontend'], function(){
 
 
     });
+
+
 
 });

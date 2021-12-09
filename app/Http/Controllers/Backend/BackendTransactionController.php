@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
+use App\Exports\TransactionExport;
 
 class BackendTransactionController extends Controller
 {
@@ -14,6 +15,22 @@ class BackendTransactionController extends Controller
     {
         $transactions   = Transaction::orderByDesc('id')
             ->get();
+
+        //Nhận biết khách đặt hàng hay thành viên đặt hàng
+        if ($status = $request->type){
+            if ($status == 1){
+                $transactions->where('t_user_id','<>',0);
+            }else{
+                $transactions->where('t_user_id',0);
+            }
+        }
+        if ($status = $request->status){
+            $transactions->where('t_status',$status);
+        }
+        if ($status = $request->export){
+//            goi toi phan excel
+            return \Excel::download(new TransactionExport($transactions), time().'don-hang.xlsx');
+        }
         $viewData   = [
                 'transactions'  => $transactions,
         ];
